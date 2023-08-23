@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# @Time    : 2018/7/24 下午3:33
-# @Author  : WangJuan
-# @File    : Session.py
+# @Time    : 2023/8/23 17:58
+# @Author  : Zhangshuaibao
+# @File    : Session
 
 """
 封装获取cookie方法
@@ -10,8 +10,8 @@
 
 import requests
 
-from Common import Log
-from Conf import Config
+from base import Log
+from conf import Config
 
 
 class Session:

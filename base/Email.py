@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# @Time    : 2018/7/19 下午5:23
-# @Author  : WangJuan
-# @File    : Email.py
+# @Time    : 2023/8/23 17:58
+# @Author  : Zhangshuaibao
+# @File    : Email
 
 """
 封装发送邮件的方法
@@ -13,9 +13,9 @@ from email.header import Header
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-from Common import Consts
-from Common import Log
-from Conf.Config import Config
+from base import Consts
+from base import Log
+from conf.Config import Config
 
 
 class SendMail:
