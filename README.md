@@ -16,4 +16,6 @@
 
 #### params：api请求参数yaml
 
+#### paramsauto：api请求参数yaml封装
+
 #### report：Allure报告
