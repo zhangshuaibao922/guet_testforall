@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
-# @Time    : 2018/7/19 下午5:22
-# @Author  : WangJuan
-# @File    : Request.py
+# @Time    : 2023/8/23 17:58
+# @Author  : Zhangshuaibao
+# @File    : Request
+
 
 """
 封装request

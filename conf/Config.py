@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# @Time    : 2018/7/25 上午10:46
-# @Author  : WangJuan
-# @File    : Config.py
+# @Time    : 2023/8/23 17:58
+# @Author  : Zhangshuaibao
+# @File    : Config
 
 from configparser import ConfigParser
 import os

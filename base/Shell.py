@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-# @Time    : 2018/8/1 下午2:54
-# @Author  : WangJuan
-# @File    : Shell.py
+# @Time    : 2023/8/23 17:58
+# @Author  : Zhangshuaibao
+# @File    : Shell
 
 """
 封装执行shell语句方法

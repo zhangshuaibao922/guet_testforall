@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-# @Time    : 2018/8/21 下午10:14
-# @Author  : WangJuan
-# @File    : Assert.py
+# @Time    : 2023/8/23 17:58
+# @Author  : Zhangshuaibao
+# @File    : Assert
 
 
 """
 封装Assert方法
 
 """
-from Common import Log
-from Common import Consts
+from base import Log
+from base import Consts
 import json
 
 
