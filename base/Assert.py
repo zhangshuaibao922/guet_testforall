@@ -30,7 +30,6 @@ class Assertions:
         except:
             self.log.error("statusCode error, expected_code is %s, statusCode is %s " % (expected_code, code))
             Consts.RESULT_LIST.append('fail')
-
             raise
 
     def assert_body(self, body, body_msg, expected_msg):
