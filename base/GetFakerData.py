@@ -7,8 +7,11 @@
 @Website：www.xxx.com\n
 @Copyright：©2002-2023 guet_test有限公司
 """
+import os
+from xlutils.copy import copy
 import yaml
 from faker import Faker
+import xlrd
 
 
 class GetFakerData:
@@ -32,6 +35,7 @@ class GetFakerData:
     as you use get_faker_users_dict()
     return  [{'name': '张彬', 'phone': '13863071236'}] type is dict
     '''
+
     def get_faker_users_dict(self, num=1):
         uer_list = []
         user = {"name": self.faker.name(),
@@ -44,10 +48,12 @@ class GetFakerData:
                     "phone": self.faker.phone_number()}
             uer_list.append(user)
         return uer_list
+
     ''''
     as you use get_faker_users()
     return  [['谢晶', '13090997767']] type is list
     '''
+
     def get_faker_users(self, num=1):
         uer_list = []
         user = [self.faker.name(),
@@ -62,12 +68,29 @@ class GetFakerData:
         return uer_list
 
     @staticmethod
-    def write_faker_data_to_excel(data: list, addr=None, ):
+    def write_faker_data_to_yaml(data: list, addr=None):
         print(type(data))
         if addr is None:
             raise Exception("addr can not be none")
         with open(addr, encoding="utf-8", mode='a+') as f:
             yaml.dump(data, stream=f, allow_unicode=True)
+
+    @staticmethod
+    def write_faker_data_to_excel(data: list, addr=None):
+        """写入excel"""
+        index = len(data)  # 获取需要写入数据的行数
+        workbook = xlrd.open_workbook(addr)  # 打开工作簿
+        sheets = workbook.sheet_names()  # 获取工作簿中的所有表格
+        worksheet = workbook.sheet_by_name(sheets[0])  # 获取工作簿中所有表格中的的第一个表格
+        rows_old = worksheet.nrows  # 获取表格中已存在的数据的行数
+        new_workbook = copy(workbook)  # 将xlrd对象拷贝转化为xlwt对象
+        new_worksheet = new_workbook.get_sheet(0)  # 获取转化后工作簿中的第一个表格
+        for i in range(0, index):
+            for j in range(0, len(data[i])):
+                new_worksheet.write(i + 1, j, data[i][j])  # 从第一行开始写
+                new_worksheet.write(i + rows_old - 1, j, data[i][j])  # 追加写入数据，注意是从i+rows_old行开始写入
+        new_workbook.save(addr)  # 保存工作簿
+        # print("xls格式表格【覆盖数据前%s行】写入数据成功！" % index)
 
     @staticmethod
     def static_method():
@@ -76,7 +99,11 @@ class GetFakerData:
 
 if __name__ == '__main__':
     # GetFakerData().static_method()
-    print(GetFakerData('zh_cn').get_faker_users_dict(4))
-    users = GetFakerData('zh_cn').get_faker_users_dict(4)
-    GetFakerData.write_faker_data_to_excel(users, "D:\\pythonfile\\SaasTestv1.0.1\\\extract.yaml")
+    print(os.getcwd())
+    dir_excel = os.getcwd() + "\\test.xls"
+    dir_yaml = os.getcwd() + "\\test.yaml"
+    users = GetFakerData('zh_cn').get_faker_users(4)
+    print(users)
+    GetFakerData().write_faker_data_to_excel(users, dir_excel)
+    GetFakerData.write_faker_data_to_yaml(GetFakerData('zh_cn').get_faker_users_dict(4), dir_yaml)
     print(GetFakerData('').get_faker_users())
