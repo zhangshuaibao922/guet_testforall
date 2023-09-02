@@ -12,9 +12,10 @@
 import os
 import random
 import requests
-import Common.Consts
-from Common import Session
 from requests_toolbelt import MultipartEncoder
+
+from utils.other_tool import Consts
+from utils.requests_tool import Session
 
 
 class Request:
@@ -58,7 +59,7 @@ class Request:
         time_consuming = response.elapsed.microseconds/1000
         time_total = response.elapsed.total_seconds()
 
-        Common.Consts.STRESS_LIST.append(time_consuming)
+        Consts.STRESS_LIST.append(time_consuming)
 
         response_dicts = dict()
         response_dicts['code'] = response.status_code
@@ -106,7 +107,7 @@ class Request:
         # time_total为响应时间，单位为秒
         time_total = response.elapsed.total_seconds()
 
-        Common.Consts.STRESS_LIST.append(time_consuming)
+        Consts.STRESS_LIST.append(time_consuming)
 
         response_dicts = dict()
         response_dicts['code'] = response.status_code
@@ -165,7 +166,7 @@ class Request:
         # time_total为响应时间，单位为秒
         time_total = response.elapsed.total_seconds()
 
-        Common.Consts.STRESS_LIST.append(time_consuming)
+        Consts.STRESS_LIST.append(time_consuming)
 
         response_dicts = dict()
         response_dicts['code'] = response.status_code
@@ -213,7 +214,7 @@ class Request:
         time_consuming = response.elapsed.microseconds/1000
         time_total = response.elapsed.total_seconds()
 
-        Common.Consts.STRESS_LIST.append(time_consuming)
+        Consts.STRESS_LIST.append(time_consuming)
 
         response_dicts = dict()
         response_dicts['code'] = response.status_code
