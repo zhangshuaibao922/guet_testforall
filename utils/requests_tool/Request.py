@@ -124,7 +124,7 @@ class Request:
 
     def post_request_multipart(self, url, data, header, file_parm, file, f_type):
         """
-        提交Multipart/form-data 格式的Post请求
+        提交Multipart/form-args 格式的Post请求
         :param url:
         :param data:
         :param header:

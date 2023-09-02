@@ -10,7 +10,7 @@
 
 import requests
 
-from base import Log
+from utils.logging_tool import Log
 from conf import Config
 
 

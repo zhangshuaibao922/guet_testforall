@@ -6,10 +6,9 @@
 
 import pytest
 
-from base import Log
-from base import Shell
+from utils.logging_tool import Log
 from conf import Config
-from base import Email
+from utils.other_tool import Email, Shell
 
 if __name__ == '__main__':
     conf = Config.Config()

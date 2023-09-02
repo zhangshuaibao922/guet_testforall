@@ -8,8 +8,8 @@
 封装Assert方法
 
 """
-from base import Log
-from base import Consts
+from utils.logging_tool import Log
+from utils.other_tool import Consts
 import json
 
 

@@ -6,7 +6,7 @@
 from configparser import ConfigParser
 import os
 
-from base import Log
+from utils.logging_tool import Log
 
 
 class Config:

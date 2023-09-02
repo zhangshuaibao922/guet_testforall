@@ -13,8 +13,8 @@ from email.header import Header
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-from base import Consts
-from base import Log
+from utils.other_tool import Consts
+from utils.logging_tool import Log
 from conf.Config import Config
 
 
