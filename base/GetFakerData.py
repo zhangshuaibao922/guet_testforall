@@ -16,6 +16,7 @@ import xlrd
 
 class GetFakerData:
     faker = None
+    __name="dc"
     ''''
     faker data is a packet support users to create faker datas to test your
     project, our group create this object to help developer get lots of datas
@@ -102,7 +103,9 @@ if __name__ == '__main__':
     print(os.getcwd())
     dir_excel = os.getcwd() + "\\test.xls"
     dir_yaml = os.getcwd() + "\\test.yaml"
+
     users = GetFakerData('zh_cn').get_faker_users(4)
+
     print(users)
     GetFakerData().write_faker_data_to_excel(users, dir_excel)
     GetFakerData.write_faker_data_to_yaml(GetFakerData('zh_cn').get_faker_users_dict(4), dir_yaml)
