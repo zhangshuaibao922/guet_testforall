@@ -7,10 +7,10 @@
 @Website：www.xxx.com\n
 @Copyright：©2002-2023 guet_test有限公司
 """
+import os
 from time import sleep
 import allure
 import pytest
-
 from base.ReadFakerData import read_excel_with_titles
 from po.login import LoginPage
 from selenium import webdriver
@@ -41,7 +41,7 @@ class TestTestIn:
     @allure.story("登录接口")
     @pytest.mark.parametrize(["username", "password"],
                              read_excel_with_titles('D:\\pythonfile\\SaasTestv1.0.1\\data\\data.xlsx', 'username',
-                                             'password'))
+                                                    'password'))
     def test_01_login(self, username, password, set):
         '''测试登录模块'''
         lp = LoginPage(self.driver)
@@ -74,3 +74,7 @@ class TestTestIn:
     #     lp.testin_login()
     #     ps = SelectPage(self.driver)
     #     ps.testin_select_03_onlin_time()
+
+
+if __name__ == '__main__':
+    print(os.getcwd())
