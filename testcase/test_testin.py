@@ -7,6 +7,31 @@
 @Website：www.xxx.com\n
 @Copyright：©2002-2023 guet_test有限公司
 """
+"""
+allure  注解示例
+@allure.epic("登录接口")
+@allure.feature("模块名称")
+@allure.story("用户故事")
+@allure.title("用例的标题")
+@allure.testcase("测试用例的链接地址")
+@allure.issue("缺陷")
+@allure.description("用例描述")
+@allure.step("操作步骤")
+@allure.severity("用例等级")
+@allure.link()
+@allure.feature("登录模块")
+@allure.severity(严重等级)
+def test_with_trivial_severity():
+#     pass
+# 
+# # 严重等级：
+# allure.severity_level.Blocker
+# allure.severity_level.CRITICAL
+# allure.severity_level.NORMAL
+# allure.severity_level.Minor
+# allure.severity_level.TRIVIAL
+"""
+
 import os
 from time import sleep
 import allure
