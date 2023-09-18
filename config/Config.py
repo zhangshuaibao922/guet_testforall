@@ -6,7 +6,7 @@
 from configparser import ConfigParser
 import os
 
-from base import Log
+from el import Log
 
 
 class Config:
@@ -40,8 +40,8 @@ class Config:
         self.config = ConfigParser()
         self.log = Log.MyLog()
         self.conf_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'config.ini')
-        self.xml_report_path = Config.path_dir+'/Report/xml'
-        self.html_report_path = Config.path_dir+'/Report/html'
+        self.xml_report_path = Config.path_dir + '/Report/xml'
+        self.html_report_path = Config.path_dir + '/Report/html'
 
         if not os.path.exists(self.conf_path):
             raise FileNotFoundError("请确保配置文件存在！")
@@ -98,3 +98,8 @@ class Config:
         self.config.add_section(title)
         with open(self.conf_path, "w+") as f:
             return self.config.write(f)
+
+
+if __name__ == '__main__':
+    t_conf = Config()
+    print(t_conf.get_conf('appium_example', "desired_caps"))

@@ -1,6 +1,6 @@
 """
 @FileName：BasePage.py\n
-@Description：基础selenium页面(basepage)\n
+@Description：基础selenium页面(basewebpage)的二次封装，主管web自动化
 @Author：Mr.Dc\n
 @Time：2023/9/5 11:28\n
 @Department：研发部\n

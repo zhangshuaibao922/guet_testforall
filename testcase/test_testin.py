@@ -11,7 +11,7 @@ import os
 from time import sleep
 import allure
 import pytest
-from base.ReadFakerData import read_excel_with_titles
+from data.ReadFakerData import read_excel_with_titles
 from po.login import LoginPage
 from selenium import webdriver
 
