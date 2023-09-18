@@ -10,7 +10,7 @@
 from selenium import webdriver
 
 
-class BasePage:
+class BaseWebPage:
 
     def __init__(self, driver: webdriver.Edge):
         self.driver = driver

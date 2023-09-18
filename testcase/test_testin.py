@@ -18,7 +18,7 @@ from selenium import webdriver
 
 @pytest.fixture(scope="class", autouse=False, params=["mysql", "redis"])
 def set():
-    print("baserequest start")
+    print("base_request start")
     yield
     print("关闭数据链接")
 

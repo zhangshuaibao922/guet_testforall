@@ -25,7 +25,7 @@ def err_handler(func):
         except BaseException as e:
             print("get", e)
             if isinstance(e, Exception):  # 判断抛出的错误是不是自定义的错误，使用继承
-                print("继承")
+                print("继")
                 return
             else:
                 print("模板不对")
