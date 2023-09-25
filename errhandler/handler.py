@@ -15,7 +15,6 @@ def err_handler(func):
     @err_hadler是个注解
     :return:
     """
-
     def wrapper(*args):
         start = time.clock()
         print(func)
